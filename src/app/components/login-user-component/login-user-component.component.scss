@@ -1,0 +1,36 @@
+.login-container {
+  width: 25rem;
+  height: 19rem;
+  margin: auto;
+  margin-top: 10%;
+  padding-top: 1%;
+  background-color: #B6FFCE;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  color: #424874;
+}
+
+.inputs {
+  width: 90%;
+  margin: auto;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-left: auto;
+  margin-bottom: 1rem;
+}
+
+.password-icon {
+  cursor: pointer;
+  background-color: #2196F3;
+  color: white;
+}

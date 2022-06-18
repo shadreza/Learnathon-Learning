@@ -1,0 +1,41 @@
+<p-toast position="top-right" key="tr"></p-toast>
+<form class="register-container" [formGroup]="registerUserGroup" (ngSubmit)="onSubmitRegisterForm()">
+  <h2 class="title"> {{title}} </h2>
+  <div class="inputs">
+    <div class="row col-12 md:col-4">
+        <div class="p-inputgroup">
+          <input type="text" pInputText placeholder="Enter Username" formControlName="userName">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        </div>
+    </div>
+    <div class="row col-12 md:col-4">
+        <div class="p-inputgroup">
+          <input type="text" pInputText placeholder="Enter Email" formControlName="email">
+          <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+        </div>
+    </div>
+    <div class="row col-12 md:col-4">
+      <div class="p-inputgroup">
+        <input [type]="passwordTypePassword ? 'password' : 'text' " pInputText placeholder="Enter Password" formControlName="password">
+        <span (click)="togglePasswordType()" class="p-inputgroup-addon password-icon"><i [class]="passwordTypePassword ? 'pi pi-eye-slash' : 'pi pi-eye' "></i></span>
+      </div>
+    </div>
+    <div class="row col-12 md:col-4">
+        <div class="p-inputgroup">
+          <input [type]="confirmPasswordTypePassword ? 'password' : 'text' " pInputText placeholder="Confirm Password" formControlName="confirmPassword">
+          <span (click)="toggleConfirmPasswordType()" class="p-inputgroup-addon password-icon"><i [class]="confirmPasswordTypePassword ? 'pi pi-eye-slash' : 'pi pi-eye' "></i></span>
+        </div>
+    </div>
+    <div class="row field col-12 md:col-4">
+      <div class="p-inputgroup">
+        <p-calendar formControlName="birthday" [touchUI]="true" [readonlyInput]="true" dateFormat="dd/mm/yy" [maxDate]="todayDate" [showButtonBar]="true" placeholder="Enter Date of Birth" [showIcon]="true"></p-calendar>
+      </div>
+    </div>
+    <div class="btn">
+      <button pButton pRipple type="button submit" icon="pi pi-check-square
+" class="p-button-rounded p-button-danger" [disabled]="registerUserGroup.invalid"></button>
+    </div>
+    <br>
+    <small>Already have an account? <span style="color: #53BF9D; cursor: pointer;" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</span></small>
+  </div>
+</form>
